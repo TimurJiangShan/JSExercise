@@ -19,11 +19,10 @@ function handleResponse({
 	slides: {
 		start = 0,
 		end = 100
-	} = {}
+	} = {},
 } = {}) {
 
 	TestCase({
-		/* restructuring here */
 		topic,
 		format,
 		slides:{
