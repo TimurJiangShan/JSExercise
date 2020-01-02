@@ -28,27 +28,28 @@ function sayHello() {
 
 // Challenge 3
 
-promise = new Promise(function(resolve, reject) {
-  // ADD CODE HERE
-  reject();
-})
+// promise = new Promise(function(resolve, reject) {
+//   // ADD CODE HERE
+//   reject();
+// })
 
-// Should print out "Reject!"
-// ADD CODE HERE
-promise.catch(function(){
-    console.log(`Reject!`);
-});
+// // Should print out "Reject!"
+// // ADD CODE HERE
+// promise.catch(function(){
+//     console.log(`Reject!`);
+// });
 
 
 // Challenge 4
 
 promise = new Promise(function (resolve, reject) {
   // ADD CODE HERE
+  resolve();
 });
 
 // Uncomment the lines below when ready
-// promise.then(() => console.log('Promise has been resolved!));
-// console.log("I'm not the promise!");
+promise.then(() => console.log('Promise has been resolved!'));
+console.log("I'm not the promise!");
 
 
 // Challenge 5
