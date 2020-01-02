@@ -42,24 +42,26 @@ function sayHello() {
 
 // Challenge 4
 
-promise = new Promise(function (resolve, reject) {
-  // ADD CODE HERE
-  resolve();
-});
+// promise = new Promise(function (resolve, reject) {
+//   // ADD CODE HERE
+//   resolve();
+// });
 
-// Uncomment the lines below when ready
-promise.then(() => console.log('Promise has been resolved!'));
-console.log("I'm not the promise!");
+// // Uncomment the lines below when ready
+// promise.then(() => console.log('Promise has been resolved!'));
+// console.log("I'm not the promise!");
 
 
 // Challenge 5
 function delay(){
-
+    return new Promise(function(resolve,reject){
+        resolve();
+    });
 }
 
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
-// delay().then(sayHello);
+delay().then(sayHello);
 
 
 // Challenge 6
