@@ -8,16 +8,27 @@ function sayHello() {
 }
 
 // Uncomment the line below when ready
-sayHello(); // should log "Hello" after 1000ms
+// sayHello(); // should log "Hello" after 1000ms
 
 
 // Challenge 2
 var promise = new Promise(function (resolve, reject) {
   // ADD CODE HERE
+  setTimeout(function(){
+    resolve();
+  }, 1000);
 });
 
 // Should print out "Resolved!"
 // ADD CODE HERE
+promise.then(function(){
+    console.log(`Resolved!`);
+});
+
+
+
+
+
 
 
 // Challenge 3
