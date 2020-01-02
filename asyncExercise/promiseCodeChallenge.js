@@ -53,22 +53,33 @@ function sayHello() {
 
 
 // Challenge 5
-function delay(){
-    return new Promise(function(resolve,reject){
-        resolve();
-    });
-}
+// function delay(){
+//     return new Promise(function(resolve,reject){
+//         resolve();
+//     });
+// }
 
-// Uncomment the code below to test
-// This code should log "Hello" after 1000ms
-delay().then(sayHello);
+// // Uncomment the code below to test
+// // This code should log "Hello" after 1000ms
+// delay().then(sayHello);
 
 
 // Challenge 6
 //
 // ADD CODE BELOW
-// var secondPromise =
-// var firstPromise =
+var secondPromise = new Promise(function(resolve,reject){
+    resolve();
+})
+var firstPromise = new Promise(function(resolve,reject){
+    resolve();
+});
+
+firstPromise.then(function(){
+    return secondPromise;
+})
+.then(function(){
+    console.log(`Second!`);
+});
 
 
 // Challenge 7
