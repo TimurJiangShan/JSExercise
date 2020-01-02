@@ -1,11 +1,14 @@
 // Challenge 1
+function printHello(){
+    console.log(`Hello`);
+}
 
 function sayHello() {
-
+    setTimeout(printHello, 1000);
 }
 
 // Uncomment the line below when ready
-// sayHello(); // should log "Hello" after 1000ms
+sayHello(); // should log "Hello" after 1000ms
 
 
 // Challenge 2
