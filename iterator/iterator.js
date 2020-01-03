@@ -50,13 +50,13 @@ function nextIterator(arr) {
     return myIterable;
 }
 
-// Uncomment the lines below to test your work
-const array3 = [1, 2, 3];
-const iteratorWithNext = nextIterator(array3);
+// // Uncomment the lines below to test your work
+// const array3 = [1, 2, 3];
+// const iteratorWithNext = nextIterator(array3);
 
-console.log(iteratorWithNext.next()); // -> should log 1
-console.log(iteratorWithNext.next()); // -> should log 2
-console.log(iteratorWithNext.next()); // -> should log 3
+// console.log(iteratorWithNext.next()); // -> should log 1
+// console.log(iteratorWithNext.next()); // -> should log 2
+// console.log(iteratorWithNext.next()); // -> should log 3
 
 
 
@@ -65,12 +65,19 @@ console.log(iteratorWithNext.next()); // -> should log 3
 function sumArray(arr) {
   // YOUR CODE HERE
   // use your nextIterator function
-
+    let res = 0;
+    let index = 0;
+    let iterator = nextIterator(arr);
+    while(index < arr.length){
+        res += iterator.next();
+        index++;
+    }
+    return res;
 }
 
 // Uncomment the lines below to test your work
-// const array4 = [1, 2, 3, 4];
-// console.log(sumArray(array4)); // -> should log 10
+const array4 = [1, 2, 3, 4];
+console.log(sumArray(array4)); // -> should log 10
 
 
 
