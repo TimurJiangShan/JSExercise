@@ -5,12 +5,14 @@ console.log('Hello, world!');
 
 function sumFunc(arr) {
   // YOUR CODE HERE
-
+    let res = 0;
+    arr.map((a) => res += a);
+    return res;
 }
 
 // Uncomment the lines below to test your work
-// const array = [1, 2, 3, 4];
-// console.log(sumFunc(array)); // -> should log 10
+const array = [1, 2, 3, 4];
+console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
   // YOUR CODE HERE
