@@ -149,7 +149,7 @@ Words.prototype[Symbol.iterator] = function() {
     let index = 0;
     let res = {
         next: function(){
-            while(index < array.length){
+            if(index < array.length){
                 return { value: array[index++], done: false }
             }
             return { value: undefined, done: true}
