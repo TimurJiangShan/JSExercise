@@ -85,15 +85,22 @@ console.log(sumArray(array4)); // -> should log 10
 
 function setIterator(set) {
   // YOUR CODE HERE
-
+    const array = Array.from(set);
+    let index = 0;
+    let iterator = {
+        next: function(){
+            return array[index++];
+        }
+    }
+    return iterator;    
 }
 
 // Uncomment the lines below to test your work
-// const mySet = new Set('hey');
-// const iterateSet = setIterator(mySet);
-// console.log(iterateSet.next()); // -> should log 'h'
-// console.log(iterateSet.next()); // -> should log 'e'
-// console.log(iterateSet.next()); // -> should log 'y'
+const mySet = new Set('hey');
+const iterateSet = setIterator(mySet);
+console.log(iterateSet.next()); // -> should log 'h'
+console.log(iterateSet.next()); // -> should log 'e'
+console.log(iterateSet.next()); // -> should log 'y'
 
 
 
