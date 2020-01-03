@@ -67,19 +67,19 @@ function sayHello() {
 // Challenge 6
 //
 // ADD CODE BELOW
-// var secondPromise = new Promise(function(resolve,reject){
-//     resolve();
-// })
-// var firstPromise = new Promise(function(resolve,reject){
-//     resolve();
-// });
+var secondPromise = new Promise(function(resolve,reject){
+    resolve();
+})
+var firstPromise = new Promise(function(resolve,reject){
+    resolve();
+});
 
-// firstPromise.then(function(){
-//     return secondPromise;
-// })
-// .then(function(){
-//     console.log(`Second!`);
-// });
+firstPromise.then(function(){
+    return secondPromise;
+})
+.then(function(){
+    console.log(`Second!`);
+});
 
 
 // Challenge 7
