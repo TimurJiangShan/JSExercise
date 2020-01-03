@@ -16,16 +16,23 @@ console.log(sumFunc(array)); // -> should log 10
 
 function returnIterator(arr) {
   // YOUR CODE HERE
+  let i = 0;
+  function elementIterator(){
+      const res = arr[i];
+      i++;
+      return res;
+  }
+  return elementIterator;
 
 }
 
 // Uncomment the lines below to test your work
-// const array2 = ['a', 'b', 'c', 'd'];
-// const myIterator = returnIterator(array2);
-// console.log(myIterator()); // -> should log 'a'
-// console.log(myIterator()); // -> should log 'b'
-// console.log(myIterator()); // -> should log 'c'
-// console.log(myIterator()); // -> should log 'd'
+const array2 = ['a', 'b', 'c', 'd'];
+const myIterator = returnIterator(array2);
+console.log(myIterator()); // -> should log 'a'
+console.log(myIterator()); // -> should log 'b'
+console.log(myIterator()); // -> should log 'c'
+console.log(myIterator()); // -> should log 'd'
 
 
 
