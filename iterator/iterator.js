@@ -118,23 +118,23 @@ console.log(sumArray(array4)); // -> should log 10
 
 // CHALLENGE 5
 
-function indexIterator(arr) {
-  // YOUR CODE HERE
-    let index = 0;
-    const iterator = {
-        next: function(){
-            return [index, arr[index++]];
-        }
-    }
-    return iterator;
-}
+// function indexIterator(arr) {
+//   // YOUR CODE HERE
+//     let index = 0;
+//     const iterator = {
+//         next: function(){
+//             return [index, arr[index++]];
+//         }
+//     }
+//     return iterator;
+// }
 
-// Uncomment the lines below to test your work
-const array5 = ['a', 'b', 'c', 'd'];
-const iteratorWithIndex = indexIterator(array5);
-console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
-console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
-console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
+// // Uncomment the lines below to test your work
+// const array5 = ['a', 'b', 'c', 'd'];
+// const iteratorWithIndex = indexIterator(array5);
+// console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+// console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+// console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
 
 
 
@@ -145,13 +145,22 @@ function Words(string) {
 }
 
 Words.prototype[Symbol.iterator] = function() {
-  // YOUR CODE HERE
-
+    let array = this.str.split(/\s/);
+    let index = 0;
+    let res = {
+        next: function(){
+            while(index < array.length){
+                return { value: array[index++], done: false }
+            }
+            return { value: undefined, done: true}
+        }
+    }
+    return res;
 }
 
 // Uncomment the lines below to test your work
-// const helloWorld = new Words('Hello World');
-// for (word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
+const helloWorld = new Words('Hello World');
+for (word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
 
 // CHALLENGE 7
 
