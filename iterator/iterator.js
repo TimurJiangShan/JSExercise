@@ -95,24 +95,24 @@ console.log(sumArray(array4)); // -> should log 10
 //     return iterator;    
 // }
 
-function setIterator(set) {
-    // YOUR CODE HERE
-    let setIterator = set.values();
-    const iterator = {
-      next: function () {
-        var next = setIterator.next();
-        return next.value;
-      }
-    }
-    return iterator;
-  }
+// function setIterator(set) {
+//     // YOUR CODE HERE
+//     let setIterator = set.values();
+//     const iterator = {
+//       next: function () {
+//         var next = setIterator.next();
+//         return next.value;
+//       }
+//     }
+//     return iterator;
+//   }
 
-// Uncomment the lines below to test your work
-const mySet = new Set('hey');
-const iterateSet = setIterator(mySet);
-console.log(iterateSet.next()); // -> should log 'h'
-console.log(iterateSet.next()); // -> should log 'e'
-console.log(iterateSet.next()); // -> should log 'y'
+// // Uncomment the lines below to test your work
+// const mySet = new Set('hey');
+// const iterateSet = setIterator(mySet);
+// console.log(iterateSet.next()); // -> should log 'h'
+// console.log(iterateSet.next()); // -> should log 'e'
+// console.log(iterateSet.next()); // -> should log 'y'
 
 
 
@@ -120,15 +120,21 @@ console.log(iterateSet.next()); // -> should log 'y'
 
 function indexIterator(arr) {
   // YOUR CODE HERE
-
+    let index = 0;
+    const iterator = {
+        next: function(){
+            return [index, arr[index++]];
+        }
+    }
+    return iterator;
 }
 
 // Uncomment the lines below to test your work
-// const array5 = ['a', 'b', 'c', 'd'];
-// const iteratorWithIndex = indexIterator(array5);
-// console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
-// console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
-// console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
+const array5 = ['a', 'b', 'c', 'd'];
+const iteratorWithIndex = indexIterator(array5);
+console.log(iteratorWithIndex.next()); // -> should log [0, 'a']
+console.log(iteratorWithIndex.next()); // -> should log [1, 'b']
+console.log(iteratorWithIndex.next()); // -> should log [2, 'c']
 
 
 
