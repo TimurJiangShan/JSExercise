@@ -1,38 +1,38 @@
-// Type JavaScript here and click "Run Code" or press Ctrl + s
-console.log('Hello, world!');
+// // Type JavaScript here and click "Run Code" or press Ctrl + s
+// console.log('Hello, world!');
 
-// CHALLENGE 1
+// // CHALLENGE 1
 
-function sumFunc(arr) {
-  // YOUR CODE HERE
-    let res = 0;
-    arr.map((a) => res += a);
-    return res;
-}
+// function sumFunc(arr) {
+//   // YOUR CODE HERE
+//     let res = 0;
+//     arr.map((a) => res += a);
+//     return res;
+// }
 
-// Uncomment the lines below to test your work
-const array = [1, 2, 3, 4];
-console.log(sumFunc(array)); // -> should log 10
+// // Uncomment the lines below to test your work
+// const array = [1, 2, 3, 4];
+// console.log(sumFunc(array)); // -> should log 10
 
-function returnIterator(arr) {
-  // YOUR CODE HERE
-  let i = 0;
-  function elementIterator(){
-      const res = arr[i];
-      i++;
-      return res;
-  }
-  return elementIterator;
+// function returnIterator(arr) {
+//   // YOUR CODE HERE
+//   let i = 0;
+//   function elementIterator(){
+//       const res = arr[i];
+//       i++;
+//       return res;
+//   }
+//   return elementIterator;
 
-}
+// }
 
-// Uncomment the lines below to test your work
-const array2 = ['a', 'b', 'c', 'd'];
-const myIterator = returnIterator(array2);
-console.log(myIterator()); // -> should log 'a'
-console.log(myIterator()); // -> should log 'b'
-console.log(myIterator()); // -> should log 'c'
-console.log(myIterator()); // -> should log 'd'
+// // Uncomment the lines below to test your work
+// const array2 = ['a', 'b', 'c', 'd'];
+// const myIterator = returnIterator(array2);
+// console.log(myIterator()); // -> should log 'a'
+// console.log(myIterator()); // -> should log 'b'
+// console.log(myIterator()); // -> should log 'c'
+// console.log(myIterator()); // -> should log 'd'
 
 
 
@@ -40,15 +40,23 @@ console.log(myIterator()); // -> should log 'd'
 
 function nextIterator(arr) {
   // YOUR CODE HERE
-
+    let i = 0;
+    let myIterable = {
+        next: function(){
+            return arr[i++];
+        }
+    };
+    
+    return myIterable;
 }
 
 // Uncomment the lines below to test your work
-// const array3 = [1, 2, 3];
-// const iteratorWithNext = nextIterator(array3);
-// console.log(iteratorWithNext.next()); // -> should log 1
-// console.log(iteratorWithNext.next()); // -> should log 2
-// console.log(iteratorWithNext.next()); // -> should log 3
+const array3 = [1, 2, 3];
+const iteratorWithNext = nextIterator(array3);
+
+console.log(iteratorWithNext.next()); // -> should log 1
+console.log(iteratorWithNext.next()); // -> should log 2
+console.log(iteratorWithNext.next()); // -> should log 3
 
 
 
