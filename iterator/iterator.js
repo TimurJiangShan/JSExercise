@@ -38,17 +38,17 @@
 
 // CHALLENGE 2
 
-function nextIterator(arr) {
-  // YOUR CODE HERE
-    let i = 0;
-    let myIterable = {
-        next: function(){
-            return arr[i++];
-        }
-    };
+// function nextIterator(arr) {
+//   // YOUR CODE HERE
+//     let i = 0;
+//     let myIterable = {
+//         next: function(){
+//             return arr[i++];
+//         }
+//     };
     
-    return myIterable;
-}
+//     return myIterable;
+// }
 
 // // Uncomment the lines below to test your work
 // const array3 = [1, 2, 3];
@@ -62,22 +62,22 @@ function nextIterator(arr) {
 
 // CHALLENGE 3
 
-function sumArray(arr) {
-  // YOUR CODE HERE
-  // use your nextIterator function
-    let res = 0;
-    let index = 0;
-    let iterator = nextIterator(arr);
-    while(index < arr.length){
-        res += iterator.next();
-        index++;
-    }
-    return res;
-}
+// function sumArray(arr) {
+//   // YOUR CODE HERE
+//   // use your nextIterator function
+//     let res = 0;
+//     let index = 0;
+//     let iterator = nextIterator(arr);
+//     while(index < arr.length){
+//         res += iterator.next();
+//         index++;
+//     }
+//     return res;
+// }
 
-// Uncomment the lines below to test your work
-const array4 = [1, 2, 3, 4];
-console.log(sumArray(array4)); // -> should log 10
+// // Uncomment the lines below to test your work
+// const array4 = [1, 2, 3, 4];
+// console.log(sumArray(array4)); // -> should log 10
 
 
 
@@ -140,27 +140,27 @@ console.log(sumArray(array4)); // -> should log 10
 
 // CHALLENGE 6
 
-function Words(string) {
-  this.str = string;
-}
+// function Words(string) {
+//   this.str = string;
+// }
 
-Words.prototype[Symbol.iterator] = function() {
-    let array = this.str.split(/\s/);
-    let index = 0;
-    let res = {
-        next: function(){
-            if(index < array.length){
-                return { value: array[index++], done: false }
-            }
-            return { value: undefined, done: true}
-        }
-    }
-    return res;
-}
+// Words.prototype[Symbol.iterator] = function() {
+//     let array = this.str.split(/\s/);
+//     let index = 0;
+//     let res = {
+//         next: function(){
+//             if(index < array.length){
+//                 return { value: array[index++], done: false }
+//             }
+//             return { value: undefined, done: true}
+//         }
+//     }
+//     return res;
+// }
 
-// Uncomment the lines below to test your work
-const helloWorld = new Words('Hello World');
-for (word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
+// // Uncomment the lines below to test your work
+// const helloWorld = new Words('Hello World');
+// for (word of helloWorld) { console.log(word); } // -> should log 'Hello' and 'World'
 
 // CHALLENGE 7
 
