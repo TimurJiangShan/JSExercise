@@ -9,8 +9,6 @@ var students = [
 ];
 
 
-
-
 // *************************************
 
 // modify/move this function
