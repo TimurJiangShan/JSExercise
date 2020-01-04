@@ -164,25 +164,28 @@
 
 // CHALLENGE 7
 
-function valueAndPrevIndex(array){
-    let i = 0;
-    let obj = {
-        sentence: function(){
-            if(i == 0){
-                i++
-                return `This is the first element`;
-            }else {
-                return `${array[i]} was found after index ${i++ - 1}`;
-            }
-        }
-    }
-    return obj;
-}
+// function valueAndPrevIndex(array){
+//     let i = 0;
+//     let obj = {
+//         sentence: function(){
+//             if(i == 0){
+//                 i++
+//                 return `This is the first element`;
+//             }else {
+//                 return `${array[i]} was found after index ${i++ - 1}`;
+//             }
+//         }
+//     }
+//     return obj;
+// }
 
-const returnedSentence = valueAndPrevIndex([4,5,6])
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
-console.log(returnedSentence.sentence());
+
+
+
+// const returnedSentence = valueAndPrevIndex([4,5,6])
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
+// console.log(returnedSentence.sentence());
 
 
 //CHALLENGE 8
