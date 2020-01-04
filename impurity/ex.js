@@ -8,15 +8,6 @@ var students = [
 	{ id: 491, name: "Ally" }
 ];
 
-function sortStudentsByName() {
-	// Don't modify this function
-	students.sort(function byName(s1,s2){
-		if (s1.name < s2.name) return -1;
-		else if (s1.name > s2.name) return 1;
-		else return 0;
-	});
-	return students;
-}
 
 function sortStudentsByID() {
 	// Don't modify this function
@@ -29,10 +20,19 @@ function sortStudentsByID() {
 // *************************************
 
 // modify/move this function
-function getStudentsByName(stud) { 
-	let students = stud
-	let res = sortStudentsByName();
-	return res; 
+function getStudentsByName(students) { 
+	students = students.slice();
+	return sortStudentsByName();
+
+	function sortStudentsByName() {
+		// Don't modify this function
+		students.sort(function byName(s1,s2){
+			if (s1.name < s2.name) return -1;
+			else if (s1.name > s2.name) return 1;
+			else return 0;
+		});
+		return students;
+	}
 }
 
 // modify/move this function
@@ -47,12 +47,12 @@ console.log(studentsTest1[2].name === "Jessica");
 console.log(studentsTest1[3].name === "Kyle");
 console.log(studentsTest1[4].name === "Susan");
 
-// var studentsTest2 = getStudentsByID(students);
-// console.log(studentsTest2[0].id === 42);
-// console.log(studentsTest2[1].id === 74);
-// console.log(studentsTest2[2].id === 260);
-// console.log(studentsTest2[3].id === 491);
-// console.log(studentsTest2[4].id === 729);
+var studentsTest2 = getStudentsByID(students);
+console.log(studentsTest2[0].id === 42);
+console.log(studentsTest2[1].id === 74);
+console.log(studentsTest2[2].id === 260);
+console.log(studentsTest2[3].id === 491);
+console.log(studentsTest2[4].id === 729);
 
 var studentsTest3 = students;
 console.log(studentsTest3[0].id === 260 && studentsTest3[0].name === "Kyle");
