@@ -16,9 +16,9 @@ function isShortEnough(str) {
 	return str.length <= 5;
 }
 
-function isLongEnough(str) {
-	return !isShortEnough(str);
-}
+// function isLongEnough(str) {
+// 	return !isShortEnough(str);
+// }
 
 var msg1 = "Hello";
 var msg2 = msg1 + " World";
