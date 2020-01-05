@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <State />
       <hr />
-      <Effect />
+      {/* <Effect />
       <hr />
       <Context />
       <hr />
@@ -31,7 +31,7 @@ function App() {
       <hr />
       <LayoutEffect />
       <hr />
-      <ImperativeHandle />
+      <ImperativeHandle /> */}
     </div>
   );
 }
