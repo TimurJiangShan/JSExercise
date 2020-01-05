@@ -4,30 +4,30 @@ function output(txt) {
 	console.log(txt);
 }
 
-function printIf(shouldPrintIt) {
-	return function(msg) {
-		if (shouldPrintIt(msg)) {
-			output(msg);
-		}
+function not(predicate){
+	return function(...args){
+		return !predicate(...args);
+	}
+}
+
+function when(fn) {
+	return function(predicate){
+		return function(...args){
+			if (predicate(...args)) {
+				return fn(...args);
+			}
+		};
 	};
 }
+
 
 function isShortEnough(str) {
 	return str.length <= 5;
 }
 
-// function isLongEnough(str) {
-// 	return !isShortEnough(str);
-// }
-
+let printIf = when(output);
 let isLongEnough = not(isShortEnough);
 
-
-function not(predicate){
-	return function(str){
-		!predicate(str);
-	}
-}
 
 var msg1 = "Hello";
 var msg2 = msg1 + " World";
