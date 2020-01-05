@@ -1,8 +1,8 @@
 "use strict";
 
-function output(txt) {
-	console.log(txt);
-}
+// function output(txt) {
+// 	console.log(txt);
+// }
 
 function not(predicate){
 	return function(...args){
@@ -24,7 +24,7 @@ function when(fn) {
 function isShortEnough(str) {
 	return str.length <= 5;
 }
-
+let output = console.log.bind(console);
 let printIf = when(output);
 let isLongEnough = not(isShortEnough);
 
