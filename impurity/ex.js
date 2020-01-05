@@ -34,6 +34,7 @@ function getStudentsByName(students) {
 	}
 }
 
+
 // modify/move this function
 function getStudentsByID(currentStudents) {
 	var originalStudents = students.slice();
