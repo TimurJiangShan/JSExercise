@@ -20,6 +20,15 @@ function isShortEnough(str) {
 // 	return !isShortEnough(str);
 // }
 
+let isLongEnough = not(isShortEnough);
+
+
+function not(predicate){
+	return function(str){
+		!predicate(str);
+	}
+}
+
 var msg1 = "Hello";
 var msg2 = msg1 + " World";
 
