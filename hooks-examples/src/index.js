@@ -17,9 +17,9 @@ function App() {
     <div className="App">
       <State />
       <hr />
-      {/* <Effect />
+      <Effect />
       <hr />
-      <Context />
+      {/* <Context />
       <hr />
       <Ref />
       <hr />
